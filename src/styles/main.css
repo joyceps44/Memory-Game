@@ -1,0 +1,107 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:#F5F542 ;
+    user-select: none;
+    padding: 50px;
+
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(325deg, #FF8C42 0%, #FF3C6A 30%, #C13CFF 70%, #A2E1E2 100%);
+    padding: 40px 60px;
+
+}
+
+h2 {
+    font-family:'Press Start 2P';
+    font-size: 3.5em;
+    color: #ccedf3;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.reset {
+    padding: 15px 20px;
+    width: 50%;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    font: size 10.5em; 
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+
+}
+
+.reset:focus {
+    color:#dff803 ;
+    background-color: #7107a3;
+
+}
+
+.game {
+    width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    margin: 40px auto;
+    border: 4px solid #5a0582;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: #a909be;
+    
+
+}
+
+.item {
+    position:relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-size: 3rem;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.imgCard{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen{
+    transform: rotateY(0deg);
+}
+.boxOpen::after,
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
